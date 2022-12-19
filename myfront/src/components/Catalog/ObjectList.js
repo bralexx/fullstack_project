@@ -1,7 +1,11 @@
 import {useSelector, useDispatch} from 'react-redux'
 import {useEffect} from 'react'
 import {makeGetContentRequest} from '../../services/BackApi'
+import {Object} from './Object'
 
+function createObject(vacancy) {
+  return <Object vacancy={vacancy}></Object>
+}
 
 function ObjectList() {
   const dispatch = useDispatch()
@@ -13,9 +17,9 @@ function ObjectList() {
   // console.log(data)
   // console.log('}')
   return (
-    <ul className='object-list'>
-      {data.map(obj => <li key={obj.title} className='object'>{obj.job_title}</li>)}
-    </ul>
+    <div className='object-list'>
+      {data.map(createObject)}
+    </div>
   );
 }
 

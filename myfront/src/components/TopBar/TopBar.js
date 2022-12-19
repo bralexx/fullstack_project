@@ -1,6 +1,7 @@
 import MenuButton from './MenuButton'
 import SearchForm from './SearchForm'
 import AccountInfo from './AccountInfo'
+import './style.css'
 
 
 function TopBar() {

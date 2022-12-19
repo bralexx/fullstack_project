@@ -1,4 +1,4 @@
-const default_state = {content: [{title:'default content title', description:'default content text'}]}
+const default_state = {content: [{job_title:'Waiting for vacancies from backend', job_description:''}]}
 
 export function ContentReducer(state = default_state, action) {
   switch (action.type) {

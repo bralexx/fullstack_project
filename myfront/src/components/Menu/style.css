@@ -1,0 +1,21 @@
+.menu-div {
+  z-index: 4;
+  position: fixed;
+  /* position: absolute; */
+  top:60px;
+  left:0;
+  bottom:0;
+  width: 300px;
+  /* height: 100%; */
+  /* float: left; */
+  background-color: #413f3f;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.menu-element-div {
+  display: table;
+  width: 300px;
+  height: 50px;
+  text-align: center;
+}

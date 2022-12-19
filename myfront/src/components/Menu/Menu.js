@@ -1,4 +1,5 @@
 import MenuElement from './MenuElement'
+import './style.css'
 
 const pages = [
   {href:'/', text:'Main object list'},

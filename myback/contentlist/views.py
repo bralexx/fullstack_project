@@ -23,6 +23,8 @@ class VacancyList(generics.ListAPIView):
     if search_str is not None:
       print(search_str)
       qs = qs.filter(job_title__contains=search_str)
+    if len(qs.all()) > 100:
+      return qs.all()[:100]
     return qs
 
 class PostVacancy(generics.CreateAPIView):

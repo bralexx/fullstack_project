@@ -1,5 +1,6 @@
 import FilterList from './FilterList'
 import ObjectList from './ObjectList'
+import './style.css'
 
 function Catalog() {
   return (
