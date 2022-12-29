@@ -6,18 +6,22 @@ import Menu from './Menu/Menu'
 import {useSelector} from 'react-redux'
 import Content from './Content'
 
+import {AuthProvider} from '../context/AuthContext'
+
 function App() {
   const menu_state = useSelector(state => state.menu_state.menu_state)
   return (
-    <div id='app-container'>
-      <TopBar/>
-      {menu_state === 1 ? 
-        <div>
-          <Menu/>
-          <Content/> 
-        </div>:
-        <Content/>}
-    </div>
+    <AuthProvider>
+      <div id='app-container'>
+        <TopBar/>
+        {menu_state === 1 ? 
+          <div>
+            <Menu/>
+            <Content/> 
+          </div>:
+          <Content/>}
+      </div>
+    </AuthProvider>
   );
 }
 

@@ -38,3 +38,11 @@ body {
   bottom:0;
 }
 
+.create-post-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:100%;
+  left:0;
+  bottom:0;
+}

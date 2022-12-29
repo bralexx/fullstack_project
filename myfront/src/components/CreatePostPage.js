@@ -1,4 +1,6 @@
 import {createPost} from '../services/BackApi'
+import {useContext} from 'react'
+import AuthContext from '../context/AuthContext'
 
 function get_fields_values() {
   let json = {}
@@ -7,19 +9,23 @@ function get_fields_values() {
   return json
 }
 export function CreatePost() {
+  const {accessToken} = useContext(AuthContext)
   return (
-    <div className='login-page-container'>
+    <div className='create-post-container'>
+      {accessToken ?
       <form onSubmit={e => {
           e.preventDefault()
-          createPost(get_fields_values())
-        }} className='login-page-form'>
-        <text id='login-title'><bf>Create Post</bf></text>
-        <label for='Username'><b>Job Title</b></label>
+          createPost(get_fields_values(), accessToken)
+        }} className='create-post-form'>
+        <p id='login-title'><b>Create Post</b></p>
+        <label ><b>Job Title</b></label>
         <input id='create-post-job-title' className='login-text-input' type='text' name='username' placeholder=''/>
-        <label for='Password'><b>Job Description</b></label>
+        <label ><b>Job Description</b></label>
         <input id='create-post-job-description' className='login-text-input' type='text' name='password' placeholder=''/>
         <input id='login-submit-button' type='submit' value='Post'/>
       </form>
+      :
+      <p>Authorization is required</p>}
     </div>
   );
 }

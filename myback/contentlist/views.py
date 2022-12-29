@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse 
 from rest_framework.views import APIView 
 from rest_framework import generics
+from rest_framework.permissions import IsAuthenticated
 
 
 from .models import Vacancy
@@ -28,6 +29,7 @@ class VacancyList(generics.ListAPIView):
     return qs
 
 class PostVacancy(generics.CreateAPIView):
+  permission_classes = [IsAuthenticated]
   serializer_class = VacancySerializer
 
 class FilterList(generics.ListAPIView):

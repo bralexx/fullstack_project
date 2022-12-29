@@ -52,11 +52,12 @@ export function getFilterList(dispatch_func) {
   .then(res => dispatch_func(getFilterListAction(res)))
 }
 
-export function createPost(data) {
+export function createPost(data, accessToken) {
   fetch(contentListURL + 'post_vacancy/', {
     method: 'POST',
     headers: {
-            'Content-Type': 'application/json;charset=utf-8'
+      'Content-Type': 'application/json;charset=utf-8',
+      'Authorization': `Bearer ${accessToken}`
     },
     body:JSON.stringify(data)
   })
